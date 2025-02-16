@@ -7,7 +7,11 @@ Examples:
 
 */
 function doubleValues(arr){
-    
+    let newArr =[];
+    arr.forEach(value => {
+    newArr.push(2*value);
+ });
+ return newArr;
 }
 
 /*
@@ -19,9 +23,14 @@ Examples:
 
 */
 function onlyEvenValues(arr){
-    
+    let newArr =[];
+    arr.forEach(value => {
+        if (value % 2 === 0){
+            newArr.push(value);
+        }
+    });
+    return newArr;
 }
-
 /*
 Write a function called showFirstAndLast which accepts an array of strings and returns a new array with only the first and last character of each string.
 
@@ -31,7 +40,11 @@ Examples:
 
 */
 function showFirstAndLast(arr){
-    
+    let newArr = [];
+    arr.forEach(value => {
+        newArr.push (value[0]+value[value.length-1]);
+    });
+    return newArr;
 }
 
 /*
@@ -44,7 +57,10 @@ Examples:
 
 */
 function addKeyAndValue(arr,key,value){
-    
+    arr.forEach(function(val){
+        val[key]= value;
+    });
+    return arr
 }
 
 /*
@@ -58,8 +74,21 @@ Examples:
     vowelCount('I Am awesome and so are you') // {i: 1, a: 4, e: 3, o: 3, u: 1};
 */
 function vowelCount(str){
-   
-}
+   let temp = str.split();
+   let obj = {}
+   const vowel = 'aeiou'
+
+   temp.forEach(function(val){
+   if (vowel.indexOf(val.toLowerCase()) !== -1)
+    if(obj[val.toLowerCase()]){
+        ++obj[val.toLowerCase()];
+        else{
+            obj[val.toLowerCase] = 1;
+        }
+    }
+   });
+   return obj;
+};
 
 /*
 Write a function called doubleValuesWithMap which accepts an array and returns a new array with all the values in the array passed to the function doubled
@@ -69,7 +98,11 @@ Examples:
     doubleValuesWithMap([1,-2,-3]) // [2,-4,-6]
 */
 
-function doubleValuesWithMap(arr) {}
+function doubleValuesWithMap(arr) {
+    arr.map(function(value){
+        return 2*value;
+    });
+}
 
 /*
 Write a function called valTimesIndex which accepts an array and returns a new array with each value multiplied by the index it is currently at in the array.
@@ -80,7 +113,9 @@ Examples:
 */
 
 function valTimesIndex(arr){
-    
+    arr.map(function(val,id){
+        return val * id;
+    })
 }
 
 /*
@@ -91,7 +126,9 @@ Examples:
 */
 
 function extractKey(arr, key){
-    
+    return arr.map(function(value){
+        return value[key];
+    });
 }
 
 /*
@@ -102,7 +139,7 @@ Examples:
 */
 
 function extractFullName(arr){
-    
+    retun
 }
 
 /*
